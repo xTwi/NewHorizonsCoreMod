@@ -13,6 +13,7 @@ import com.dreammaster.gthandler.CoreMod_ProcessingArrayRecipeLoader;
 import com.dreammaster.gthandler.GT_CoreModSupport;
 import com.dreammaster.gthandler.GT_CustomLoader;
 import com.dreammaster.gthandler.GT_Loader_ItemPipes;
+import com.dreammaster.gtppHandler.GTPPMultiBlockNerfer;
 import com.dreammaster.item.ItemList;
 import com.dreammaster.lib.Refstrings;
 import com.dreammaster.loginhandler.LoginHandler;
@@ -37,10 +38,8 @@ import cpw.mods.fml.common.FMLCommonHandler;
 import cpw.mods.fml.common.Loader;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.SidedProxy;
-import cpw.mods.fml.common.event.FMLInitializationEvent;
-import cpw.mods.fml.common.event.FMLPostInitializationEvent;
-import cpw.mods.fml.common.event.FMLPreInitializationEvent;
-import cpw.mods.fml.common.event.FMLServerStartingEvent;
+import cpw.mods.fml.common.asm.transformers.deobf.FMLRemappingAdapter;
+import cpw.mods.fml.common.event.*;
 import cpw.mods.fml.common.network.NetworkRegistry;
 import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.relauncher.Side;
@@ -475,4 +474,22 @@ public class MainRegistry
             pEvent.registerServerCommand(new AllPurposeDebugCommand());
         }
     }
+
+    @Mod.EventHandler
+    public void serverStarted(FMLServerStartedEvent pEvent) {
+        if (Loader.isModLoaded("miscutils")){
+            GTPPMultiBlockNerfer.apply();
+        }
+    }
+
+    @Mod.EventHandler
+    public void onRemapping(FMLMissingMappingsEvent missingMappingsEvent) {
+        for (FMLMissingMappingsEvent.MissingMapping missingMapping : missingMappingsEvent.getAll()) {
+            if (missingMapping.name.equalsIgnoreCase("dreamcraft:item.GanymedStoneDust")) {
+                missingMapping.remap(ItemList.GanymedeStoneDust.Item.getConstructedItem());
+                return;
+            }
+        }
+    }
+
 }

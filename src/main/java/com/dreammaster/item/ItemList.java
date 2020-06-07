@@ -562,7 +562,7 @@ public enum ItemList
     MedalWarp(new ModSimpleBaseItem("MedalWarp", ModTabList.ModGenericTab)),
     AluminoSilicateWool(new ModSimpleBaseItem("AluminoSilicateWool", ModTabList.ModGenericTab)),
     EdibleSalt(new ModSimpleBaseItem("EdibleSalt", ModTabList.ModGenericTab)),
-
+    GTPPNERFCIRCUIT(new ModSimpleBaseItem("GTPPNERFCIRCUIT", ModTabList.ModGenericTab)),
     // Do not delete this
     EndOfList(null);
 
