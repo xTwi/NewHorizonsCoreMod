@@ -283,6 +283,75 @@ public class BacteriaRegistry {
                     FluidRegistry.getFluidStack("unknowwater",8000),
                     500, BW_Util.getMachineVoltageFromTier(8),0);
         }
+        addBacterialVatRecipe(
+                new ItemStack[]{AntimonyTrioxide.getDust(16), Osmium.getDust(16)},
+                CultureSet.get("CombinedBac"),
+                new FluidStack[]{Oil.getFluid(1000)},
+                new FluidStack[]{Xenoxene.getFluid(1)},
+            3600,BW_Util.getMachineVoltageFromTier(8), Materials.NaquadahEnriched,8,0,false);
+
+    addBioLabRecipeIncubation(
+                new ItemStack(Items.egg, 1, 0),
+                CultureSet.get("OvumBac"),
+                new int[]{1500},
+                FluidRegistry.getFluidStack("binnie.bacteria",1000),
+                1200,7680, CLEANROOM);
+
+    addBacterialVatRecipe(
+                new ItemStack[]{ItemList.Circuit_Chip_Stemcell.get(64L), GT_ModHandler.getModItem("GalaxySpace","item.UnknowCrystal",16L), CustomItemList.TCetiESeaweedExtract.get(4L), Tritanium.getDust(4)},
+                CultureSet.get("StemCellBac"),
+                new FluidStack[]{GrowthMediumRaw.getFluid(8)},
+                new FluidStack[]{BioMediumRaw.getFluid(2)},
+                3600, 30720, Plutonium, 6, CLEANROOM, true);
+
+        addBacterialVatRecipe(
+                new ItemStack[]{ItemList.Circuit_Chip_Stemcell.get(16L), GT_ModHandler.getModItem("GalaxySpace","item.UnknowCrystal",16L), CustomItemList.TCetiESeaweedExtract.get(8L), InfinityCatalyst.getDustTiny(4)},
+                CultureSet.get("BioCellBac"),
+                new FluidStack[]{GrowthMediumRaw.getFluid(5)},
+                new FluidStack[]{BioMediumRaw.getFluid(5)},
+                3600, 122880, NaquadahEnriched, 7, CLEANROOM, true);
+
+        addBacterialVatRecipe(
+                new ItemStack[]{ItemList.Circuit_Chip_Biocell.get(8L), CustomItemList.TCetiESeaweedExtract.get(16L), InfinityCatalyst.getDust(4)},
+                CultureSet.get("BioCellBac"),
+                new FluidStack[]{GrowthMediumRaw.getFluid(5)},
+                new FluidStack[]{BioMediumRaw.getFluid(10)},
+                3600, 500000, Naquadria, 8, CLEANROOM, true);
+
+        addBioLabRecipeIncubation(
+                ItemList.Circuit_Chip_Stemcell.get(1L),
+                CultureSet.get("StemCellBac"),
+                new int[]{750},
+                GrowthMediumRaw.getFluid(1000),
+                2400,122880, CLEANROOM);
+
+        addBioLabRecipeIncubation(
+                ItemList.Circuit_Chip_Biocell.get(1L),
+                CultureSet.get("BioCellBac"),
+                new int[]{750},
+                Materials.BioMediumRaw.getFluid(1000),
+                3600,500000, CLEANROOM);
+
+        addBacterialVatRecipe(
+                new ItemStack[]{GT_ModHandler.getModItem("Genetics", "misc", 2L, 4)},
+                CultureSet.get("BinniGrowthMedium"),
+                new FluidStack[]{GT_ModHandler.getDistilledWater(4L)},
+                new FluidStack[]{FluidRegistry.getFluidStack("binnie.growthmedium",2)},
+                150, 480, 0, 4, 0, false);
+
+        addBacterialVatRecipe(
+                new ItemStack[]{MysteriousCrystal.getDust(1)},
+                CultureSet.get("BinniGrowthMedium"),
+                new FluidStack[]{GT_ModHandler.getDistilledWater(8L)},
+                new FluidStack[]{FluidRegistry.getFluidStack("binnie.growthmedium",4)},
+                150, 1920, Bismuth, 5, 0, false);
+
+        addBacterialVatRecipe(
+                new ItemStack[]{InfinityCatalyst.getDustTiny(1)},
+                CultureSet.get("BinniGrowthMedium"),
+                new FluidStack[]{GT_ModHandler.getDistilledWater(16L)},
+                new FluidStack[]{FluidRegistry.getFluidStack("binnie.growthmedium",8)},
+                150, 7680, Uranium, 5, 0, false);
 
         addBioLabRecipeIncubation(
                 GT_ModHandler.getModItem("Genetics", "misc", 1L, 4),
@@ -306,137 +375,11 @@ public class BacteriaRegistry {
                 150,480, 0);
 
         addBioLabRecipeIncubation(
-                GT_ModHandler.getModItem("IC2", "itemBiochaff", 16L, 0),
-                CultureSet.get("BinniBacteria"),
-                new int[]{6000},
-                FluidRegistry.getFluidStack("binnie.bacteria",1000),
-                300,480, 0);
-
-        addBioLabRecipeIncubation(
-                CustomItemList.MarsStoneDust.get(64L),
-                CultureSet.get("BacterialSludgeBac"),
-                new int[]{3000},
-                FluidRegistry.getFluidStack("bacterialsludge", 1000),
-                600,1920,0);
-
-        addBioLabRecipeIncubation(
                 MysteriousCrystal.getDust(4),
                 CultureSet.get("BinniGrowthMedium"),
                 new int[]{10000},
                 FluidRegistry.getFluidStack("binnie.growthmedium", 500),
                 150,1920, 0);
-
-        addBioLabRecipeIncubation(
-                MysteriousCrystal.getDust(4),
-                CultureSet.get("BinniBacteria"),
-                new int[]{8000},
-                FluidRegistry.getFluidStack("binnie.bacteria",500),
-                300,7680, CLEANROOM);
-
-        addBioLabRecipeIncubation(
-                MysteriousCrystal.getDust(16),
-                CultureSet.get("BacterialSludgeBac"),
-                new int[]{5000},
-                FluidRegistry.getFluidStack("bacterialsludge", 500),
-                600,7680, CLEANROOM);
-
-        addBioLabRecipeIncubation(
-                new ItemStack(Items.egg, 1, 0),
-                CultureSet.get("OvumBac"),
-                new int[]{1500},
-                FluidRegistry.getFluidStack("binnie.bacteria",1000),
-                1200,7680, CLEANROOM);
-
-        addBioLabRecipeIncubation(
-                InfinityCatalyst.getDustTiny(4),
-                CultureSet.get("BacterialSludgeBac"),
-                new int[]{7500},
-                FluidRegistry.getFluidStack("bacterialsludge", 250),
-                600,30720, CLEANROOM);
-
-        addBioLabRecipeIncubation(
-                MysteriousCrystal.getDust(16),
-                CultureSet.get("Mutagen"),
-                new int[]{1500},
-                FluidRegistry.getFluidStack("mutagen", 1000),
-                1200,30720, CLEANROOM);
-
-        addBioLabRecipeIncubation(
-                InfinityCatalyst.getDustTiny(1),
-                CultureSet.get("BinniBacteria"),
-                new int[]{10000},
-                FluidRegistry.getFluidStack("binnie.bacteria",250),
-                300,30720, CLEANROOM);
-
-        addBioLabRecipeIncubation(
-                InfinityCatalyst.getDustTiny(4),
-                CultureSet.get("Mutagen"),
-                new int[]{3000},
-                FluidRegistry.getFluidStack("mutagen", 500),
-                1200,122880, CLEANROOM);
-
-        addBioLabRecipeIncubation(
-                ItemList.Circuit_Chip_Stemcell.get(1L),
-                CultureSet.get("StemCellBac"),
-                new int[]{750},
-                GrowthMediumRaw.getFluid(1000),
-                2400,122880, CLEANROOM);
-
-        addBioLabRecipeIncubation(
-                ItemList.Circuit_Chip_Biocell.get(1L),
-                CultureSet.get("BioCellBac"),
-                new int[]{750},
-                Materials.BioMediumRaw.getFluid(1000),
-                3600,500000, CLEANROOM);
-
-        addBacterialVatRecipe(
-                new ItemStack[]{AntimonyTrioxide.getDust(16), Osmium.getDust(16)},
-                CultureSet.get("CombinedBac"),
-                new FluidStack[]{Oil.getFluid(1000)},
-                new FluidStack[]{Xenoxene.getFluid(1)},
-            3600,BW_Util.getMachineVoltageFromTier(8), Materials.NaquadahEnriched,8,0,false);
-
-        addBacterialVatRecipe(
-                new ItemStack[]{ItemList.Circuit_Chip_Stemcell.get(64L), GT_ModHandler.getModItem("GalaxySpace","item.UnknowCrystal",16L), CustomItemList.TCetiESeaweedExtract.get(4L), Tritanium.getDust(4)},
-                CultureSet.get("StemCellBac"),
-                new FluidStack[]{GrowthMediumRaw.getFluid(8)},
-                new FluidStack[]{BioMediumRaw.getFluid(2)},
-                3600, 30720, Plutonium, 6, CLEANROOM, true);
-
-        addBacterialVatRecipe(
-                new ItemStack[]{ItemList.Circuit_Chip_Stemcell.get(16L), GT_ModHandler.getModItem("GalaxySpace","item.UnknowCrystal",16L), CustomItemList.TCetiESeaweedExtract.get(8L), InfinityCatalyst.getDustTiny(4)},
-                CultureSet.get("BioCellBac"),
-                new FluidStack[]{GrowthMediumRaw.getFluid(5)},
-                new FluidStack[]{BioMediumRaw.getFluid(5)},
-                3600, 122880, NaquadahEnriched, 7, CLEANROOM, true);
-
-        addBacterialVatRecipe(
-                new ItemStack[]{ItemList.Circuit_Chip_Biocell.get(8L), CustomItemList.TCetiESeaweedExtract.get(16L), InfinityCatalyst.getDust(4)},
-                CultureSet.get("BioCellBac"),
-                new FluidStack[]{GrowthMediumRaw.getFluid(5)},
-                new FluidStack[]{BioMediumRaw.getFluid(10)},
-                3600, 500000, Naquadria, 8, CLEANROOM, true);
-
-        addBacterialVatRecipe(
-                new ItemStack[]{GT_ModHandler.getModItem("Genetics", "misc", 2L, 4)},
-                CultureSet.get("BinniGrowthMedium"),
-                new FluidStack[]{GT_ModHandler.getDistilledWater(4L)},
-                new FluidStack[]{FluidRegistry.getFluidStack("binnie.growthmedium",2)},
-                150, 480, 0, 4, 0, false);
-
-        addBacterialVatRecipe(
-                new ItemStack[]{MysteriousCrystal.getDust(1)},
-                CultureSet.get("BinniGrowthMedium"),
-                new FluidStack[]{GT_ModHandler.getDistilledWater(8L)},
-                new FluidStack[]{FluidRegistry.getFluidStack("binnie.growthmedium",4)},
-                150, 1920, Bismuth, 5, 0, false);
-
-        addBacterialVatRecipe(
-                new ItemStack[]{InfinityCatalyst.getDustTiny(1)},
-                CultureSet.get("BinniGrowthMedium"),
-                new FluidStack[]{GT_ModHandler.getDistilledWater(16L)},
-                new FluidStack[]{FluidRegistry.getFluidStack("binnie.growthmedium",8)},
-                150, 7680, Uranium, 5, 0, false);
 
         addBacterialVatRecipe(
                 new ItemStack[]{GT_ModHandler.getModItem("IC2", "itemBiochaff", 4L, 0)},
@@ -459,6 +402,27 @@ public class BacteriaRegistry {
                 new FluidStack[]{FluidRegistry.getFluidStack("binnie.bacteria",8)},
                 300, 7680, Plutonium, 6, CLEANROOM, false);
 
+        addBioLabRecipeIncubation(
+                GT_ModHandler.getModItem("IC2", "itemBiochaff", 16L, 0),
+                CultureSet.get("BinniBacteria"),
+                new int[]{6000},
+                FluidRegistry.getFluidStack("binnie.bacteria",1000),
+                300,480, 0);
+
+        addBioLabRecipeIncubation(
+                MysteriousCrystal.getDust(4),
+                CultureSet.get("BinniBacteria"),
+                new int[]{8000},
+                FluidRegistry.getFluidStack("binnie.bacteria",500),
+                300,7680, CLEANROOM);
+
+        addBioLabRecipeIncubation(
+                InfinityCatalyst.getDustTiny(1),
+                CultureSet.get("BinniBacteria"),
+                new int[]{10000},
+                FluidRegistry.getFluidStack("binnie.bacteria",250),
+                300,30720, CLEANROOM);
+
         addBacterialVatRecipe(
                 new ItemStack[]{CustomItemList.MarsStoneDust.get(16L)},
                 CultureSet.get("BacterialSludgeBac"),
@@ -480,6 +444,27 @@ public class BacteriaRegistry {
                 new FluidStack[]{FluidRegistry.getFluidStack("bacterialsludge", 4)},
                 600, 30720, Plutonium, 7, CLEANROOM, true);
 
+        addBioLabRecipeIncubation(
+                CustomItemList.MarsStoneDust.get(64L),
+                CultureSet.get("BacterialSludgeBac"),
+                new int[]{3000},
+                FluidRegistry.getFluidStack("bacterialsludge", 1000),
+                600,1920,0);
+
+        addBioLabRecipeIncubation(
+                MysteriousCrystal.getDust(16),
+                CultureSet.get("BacterialSludgeBac"),
+                new int[]{5000},
+                FluidRegistry.getFluidStack("bacterialsludge", 500),
+                600,7680, CLEANROOM);
+
+        addBioLabRecipeIncubation(
+                InfinityCatalyst.getDustTiny(4),
+                CultureSet.get("BacterialSludgeBac"),
+                new int[]{7500},
+                FluidRegistry.getFluidStack("bacterialsludge", 250),
+                600,30720, CLEANROOM);
+
         addBacterialVatRecipe(
                 new ItemStack[]{MysteriousCrystal.getDust(4)},
                 CultureSet.get("Mutagen"),
@@ -493,6 +478,20 @@ public class BacteriaRegistry {
                 new FluidStack[]{GT_ModHandler.getDistilledWater(8L)},
                 new FluidStack[]{FluidRegistry.getFluidStack("mutagen", 2)},
                 1200, 30720, Plutonium, 7, CLEANROOM, true);
+
+        addBioLabRecipeIncubation(
+                MysteriousCrystal.getDust(16),
+                CultureSet.get("Mutagen"),
+                new int[]{1500},
+                FluidRegistry.getFluidStack("mutagen", 1000),
+                1200,30720, CLEANROOM);
+
+        addBioLabRecipeIncubation(
+                InfinityCatalyst.getDustTiny(4),
+                CultureSet.get("Mutagen"),
+                new int[]{3000},
+                FluidRegistry.getFluidStack("mutagen", 500),
+                1200,122880, CLEANROOM);
 
         new BioItemLoader();
     }
