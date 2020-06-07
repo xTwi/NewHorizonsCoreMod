@@ -3,6 +3,7 @@ package com.dreammaster.gtppHandler;
 import gregtech.api.enums.GT_Values;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
+import gregtech.api.util.GT_Utility;
 import gtPlusPlus.core.material.ELEMENT;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
@@ -12,6 +13,17 @@ import net.minecraftforge.fluids.FluidStack;
 public class GTPPRecipeLoader implements Runnable {
     @Override
     public void run() {
+
+        ItemStack input = GT_Utility.getIntegratedCircuit(0);
+        input.stackSize = 1;
+
+        GT_Values.RA.addAssemblerRecipe(
+                input,
+                GT_Utility.getIntegratedCircuit(24),
+                com.dreammaster.item.ItemList.GTPPNERFCIRCUIT.getIS(),
+                200,
+                120
+        );
 
         GT_Values.RA.addFluidSolidifierRecipe(ItemList.Shape_Mold_Ball.get(0L), new FluidStack(FluidRegistry.getFluid("ender"), 250), new ItemStack(Items.ender_pearl, 1, 0), 100, 30);
         //MK4
