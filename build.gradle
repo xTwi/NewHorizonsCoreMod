@@ -152,7 +152,7 @@ dependencies {
     compile("com.github.GTNewHorizons:GalacticGregGT5:master-SNAPSHOT") {
         setChanging(true)
     }
-    compile("com.github.GTNewHorizons:bartworks:master-SNAPSHOT:dev") {
+    compile("com.github.GTNewHorizons:bartworks:no-ic2-maven-SNAPSHOT:dev") {
         setChanging(true)
     }
     compile fileTree(dir: "libs", include: "*.jar")
