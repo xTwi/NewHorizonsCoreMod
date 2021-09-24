@@ -85,10 +85,6 @@ repositories {
         url = 'http://dvs1.progwml6.com/files/maven'
     }
     maven {
-        url = "http://maven.ic2.player.to/"
-        name = "ic2"
-    }
-    maven {
         url = "http://www.ryanliptak.com/maven/"
         name = "applecore"
     }
@@ -139,7 +135,7 @@ dependencies {
     compile ":WitcheryExtras:1.0.1-dev"
     compile ":witchery:1.7.10-0.24.1:deobf"
     //jitpack
-    compile("com.github.GTNewHorizons:GT5-Unofficial:experimental-SNAPSHOT:dev") {
+    compile("com.github.GTNewHorizons:GT5-Unofficial:no-ic2-maven-SNAPSHOT:dev") {
         setChanging(true)
     }
     compile "com.github.GTNewHorizons:StructureLib:1.0.6:deobf"
